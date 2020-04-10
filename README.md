@@ -32,7 +32,7 @@ module "vpc" {
 }
 
 module "subnets" {
-  source             = "../"
+  source             = "git::https://github.com/MagnetarIT/terraform-aws-subnets.git?ref=tags/0.1.0"
   namespace          = "mag"
   environment        = "dev"
   name               = "app"
