@@ -9,7 +9,7 @@ module "public_naming" {
   tags = merge(
     module.naming.tags,
     var.public_subnets_additional_tags,
-    map(var.subnet_type_tag_key, format(var.subnet_type_tag_value_format, "public"))
+    tomap({"${var.subnet_type_tag_key}" = format(var.subnet_type_tag_value_format, "public")})
   )
 }
 
